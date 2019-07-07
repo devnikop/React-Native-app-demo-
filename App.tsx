@@ -1,5 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
 
 import Header from './components/header/header'
 import NameList from './components/name-list/name-list'
