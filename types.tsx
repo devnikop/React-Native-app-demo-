@@ -4,7 +4,6 @@ type Name = {
   title: string,
 }
 
-
 export {
-  Name
+  Name,
 }
