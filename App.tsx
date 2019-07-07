@@ -1,34 +1,54 @@
 import React from 'react'
 import {
   createAppContainer,
-  createStackNavigator
+  createStackNavigator,
+  createSwitchNavigator,
 } from 'react-navigation'
 
-import Authorization from './src/components/authorization/authorization'
-import Info from './src/components/info/info'
-import NameList from './src/components/name-list/name-list'
+import SignInScreen from './src/components/authorization/authorization'
+import InfoScreen from './src/components/info/info'
+import NameListScreen from './src/components/name-list/name-list'
 
-const AppNagigator = createStackNavigator(
+const navigationHeaderOptions = {
+  headerStyle: {
+    backgroundColor: "#BB0D02",
+  },
+  headerTintColor: "#FFFFFF",
+  headerTitleStyle: {
+    fontWeight: "bold",
+  }
+}
+
+const AppStack = createStackNavigator(
   {
-    Authorization: Authorization,
-    Details: Info,
-    Home: NameList,
+    Details: InfoScreen,
+    Home: NameListScreen,
   },
   {
-    initialRouteName: "Authorization",
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: "#BB0D02",
-      },
-      headerTintColor: "#FFFFFF",
-      headerTitleStyle: {
-        fontWeight: "bold",
-      }
-    }
+    initialRouteName: "Home",
+    defaultNavigationOptions: navigationHeaderOptions
   }
 )
 
-const AppContainer = createAppContainer(AppNagigator)
+const AuthStack = createStackNavigator(
+  {
+    SignIn: SignInScreen
+  },
+  {
+    initialRouteName: "SignIn",
+    defaultNavigationOptions: navigationHeaderOptions
+  }
+)
+
+const AppContainer = createAppContainer(createSwitchNavigator(
+  {
+    App: AppStack,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: "Auth",
+  }
+))
 
 export default class App extends React.Component {
   render() {

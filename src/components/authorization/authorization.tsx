@@ -5,10 +5,18 @@ import {
   TextInput,
   View,
 } from 'react-native'
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState,
+} from 'react-navigation'
+
 
 interface Props {
-
+  navigation: Navigation
 }
+
+type Navigation = NavigationScreenProp<NavigationState, NavigationParams>
 
 class Authorization extends React.PureComponent<Props> {
   constructor(props) {
@@ -32,7 +40,7 @@ class Authorization extends React.PureComponent<Props> {
         />
         <Button
           onPress={this._handlerButtonPress}
-          title=""
+          title="Войти"
         />
       </View>
     )
