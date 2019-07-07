@@ -11,6 +11,8 @@ import {
 
 import style from './styles'
 
+import Header from '../header/header'
+
 interface Props {
   navigation: Navigation,
 }
@@ -61,11 +63,14 @@ class Info extends React.PureComponent<Props> {
   }
 
   _handlerSignOffPress() {
-    this.props.navigation.navigate("SignIn")
+    this.props.navigation.navigate('SignIn')
   }
 
   static navigationOptions = {
     title: 'Элемент',
+    headerRight: (
+      <Header />
+    )
   }
 }
 

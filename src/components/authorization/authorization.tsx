@@ -11,6 +11,7 @@ import {
   NavigationState,
 } from 'react-navigation'
 
+import styles from './styles';
 
 interface Props {
   navigation: Navigation
@@ -51,7 +52,7 @@ class Authorization extends React.PureComponent<Props> {
   }
 
   static navigationOptions = {
-    title: 'Вход в личный кабинет',
+    headerTitle: 'Вход в личный кабинет',
   }
 }
 

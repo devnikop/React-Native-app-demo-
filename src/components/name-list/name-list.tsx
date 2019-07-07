@@ -3,6 +3,7 @@ import {
   FlatList,
   View,
   Text,
+  Image,
   TouchableOpacity,
 } from 'react-native'
 import {
@@ -12,6 +13,8 @@ import {
 } from 'react-navigation'
 
 import style from './styles'
+
+import Header from '../header/header'
 
 interface Props {
   navigation: Navigation,
@@ -61,7 +64,7 @@ class NameList extends React.PureComponent<Props> {
           data={names}
           renderItem={({ item }) =>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Details", {
+              onPress={() => this.props.navigation.navigate('Details', {
                 title: item.title,
                 description: item.description,
               })}
@@ -78,7 +81,10 @@ class NameList extends React.PureComponent<Props> {
   }
 
   static navigationOptions = {
-    title: 'Список',
+    headerTitle: 'Список',
+    headerRight: (
+      <Header />
+    )
   }
 }
 
