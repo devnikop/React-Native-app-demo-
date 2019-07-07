@@ -1,4 +1,6 @@
 import React from 'react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import {
   createAppContainer,
   createStackNavigator,
@@ -6,6 +8,8 @@ import {
 } from 'react-navigation'
 
 import { Route } from './src/constants'
+
+import { reducer } from './src/reducer/user/user'
 
 import SignInScreen from './src/components/authorization/authorization'
 import InfoScreen from './src/components/info/info'
@@ -52,8 +56,14 @@ const AppContainer = createAppContainer(createSwitchNavigator(
   }
 ))
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
-    return <AppContainer />
+    const store = createStore(reducer)
+
+    return <Provider store={store}>
+      <AppContainer />
+    </Provider>
   }
 }
+
+export default App
