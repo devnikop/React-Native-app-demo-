@@ -9,6 +9,11 @@ import {
   NavigationState,
 } from 'react-navigation'
 
+import {
+  PageHeader,
+  Route,
+} from '../../constants'
+
 import style from './styles'
 
 import Header from '../header/header'
@@ -63,14 +68,12 @@ class Info extends React.PureComponent<Props> {
   }
 
   _handlerSignOffPress() {
-    this.props.navigation.navigate('SignIn')
+    this.props.navigation.navigate(Route.SIGN_IN)
   }
 
   static navigationOptions = {
-    title: 'Элемент',
-    headerRight: (
-      <Header />
-    )
+    title: PageHeader.INFO,
+    headerRight: <Header />
   }
 }
 

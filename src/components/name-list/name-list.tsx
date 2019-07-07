@@ -1,16 +1,20 @@
 import React from 'react'
 import {
   FlatList,
-  View,
   Text,
-  Image,
   TouchableOpacity,
+  View,
 } from 'react-native'
 import {
   NavigationParams,
   NavigationScreenProp,
   NavigationState,
 } from 'react-navigation'
+
+import {
+  PageHeader,
+  Route,
+} from '../../constants'
 
 import style from './styles'
 
@@ -64,7 +68,7 @@ class NameList extends React.PureComponent<Props> {
           data={names}
           renderItem={({ item }) =>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Details', {
+              onPress={() => this.props.navigation.navigate(Route.DETAILS, {
                 title: item.title,
                 description: item.description,
               })}
@@ -81,10 +85,8 @@ class NameList extends React.PureComponent<Props> {
   }
 
   static navigationOptions = {
-    headerTitle: 'Список',
-    headerRight: (
-      <Header />
-    )
+    headerTitle: PageHeader.HOME,
+    headerRight: <Header />
   }
 }
 

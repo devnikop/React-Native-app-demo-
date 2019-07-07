@@ -11,6 +11,8 @@ import {
   NavigationState,
 } from 'react-navigation'
 
+import { PageHeader } from '../../constants'
+
 import styles from './styles';
 
 interface Props {
@@ -41,7 +43,7 @@ class Authorization extends React.PureComponent<Props> {
         />
         <Button
           onPress={this._handlerButtonPress}
-          title="Войти"
+          title={`Войти`}
         />
       </View>
     )
@@ -52,7 +54,7 @@ class Authorization extends React.PureComponent<Props> {
   }
 
   static navigationOptions = {
-    headerTitle: 'Вход в личный кабинет',
+    headerTitle: PageHeader.SIGN_IN,
   }
 }
 

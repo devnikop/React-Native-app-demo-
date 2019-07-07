@@ -5,6 +5,8 @@ import {
   createSwitchNavigator,
 } from 'react-navigation'
 
+import { Route } from './src/constants'
+
 import SignInScreen from './src/components/authorization/authorization'
 import InfoScreen from './src/components/info/info'
 import NameListScreen from './src/components/name-list/name-list'
@@ -25,7 +27,7 @@ const AppStack = createStackNavigator(
     Home: NameListScreen,
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: Route.HOME,
     defaultNavigationOptions: navigationHeaderOptions
   }
 )
@@ -35,7 +37,7 @@ const AuthStack = createStackNavigator(
     SignIn: SignInScreen
   },
   {
-    initialRouteName: "SignIn",
+    initialRouteName: Route.SIGN_IN,
     defaultNavigationOptions: navigationHeaderOptions
   }
 )
@@ -46,7 +48,7 @@ const AppContainer = createAppContainer(createSwitchNavigator(
     Auth: AuthStack,
   },
   {
-    initialRouteName: "Auth",
+    initialRouteName: Route.AUTH,
   }
 ))
 
