@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+import Header from './components/header/header'
 import NameList from './components/name-list/name-list'
 import Info from './components/info/info'
 
@@ -36,6 +37,10 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <Header
+        page={`List`}
+        userLogin={`user-login`}
+      />
       <NameList
         names={names}
       />
@@ -51,7 +56,6 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
     backgroundColor: '#fff',
   },
 })
