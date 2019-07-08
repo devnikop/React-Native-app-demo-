@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Button,
+  TouchableHighlight,
   Text,
   TextInput,
   View,
@@ -40,10 +40,16 @@ class Authorization extends React.PureComponent<Props> {
           placeholder={`Пароль`}
           textContentType="password"
         />
-        <Button
+        <TouchableHighlight
           onPress={onButtonPress}
-          title={`Войти`}
-        />
+          style={styles.submitButton}
+        >
+          <Text
+            style={styles.buttonText}
+          >
+            Войти
+          </Text>
+        </TouchableHighlight>
       </View>
     )
   }

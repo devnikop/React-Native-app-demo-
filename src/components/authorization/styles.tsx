@@ -33,6 +33,21 @@ const styles = StyleSheet.create({
 
     borderBottomWidth: 2,
     borderBottomColor: '#d9d9d9',
+  },
+
+  submitButton: {
+    padding: 20,
+    marginLeft: 30,
+    marginRight: 30,
+
+    borderRadius: 10,
+
+    backgroundColor: '#BB0D02',
+  },
+
+  buttonText: {
+    textAlign: 'center',
+    color: '#FFFFFF',
   }
 })
 
