@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   nameList: {
     padding: 15,
   },
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default styles
+export default style

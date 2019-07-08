@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-  TouchableHighlight,
+  ScrollView,
   Text,
   TextInput,
-  View,
+  TouchableHighlight,
 } from 'react-native'
 
-import styles from './styles'
+import style from './styles'
 
 interface Props {
   login: string,
@@ -23,34 +23,32 @@ class Authorization extends React.PureComponent<Props> {
     } = this.props
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Вход</Text>
-        <Text style={styles.description}>
+      <ScrollView style={style.container}>
+        <Text style={style.title}>Вход</Text>
+        <Text style={style.description}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe tempora illo enim nemo aliquid repellat minus obcaecati praesentium! Tempore, illo officiis! In, eos porro! Reprehenderit nobis natus quam perspiciatis aliquid!
         </Text>
         <TextInput
           onChangeText={onLoginChange}
-          style={styles.textInput}
+          style={style.textInput}
           placeholder={`Логин`}
           textContentType="nickname"
           value={login}
         />
         <TextInput
-          style={styles.textInput}
+          style={style.textInput}
           placeholder={`Пароль`}
           textContentType="password"
         />
         <TouchableHighlight
           onPress={onButtonPress}
-          style={styles.submitButton}
+          style={style.submitButton}
         >
-          <Text
-            style={styles.buttonText}
-          >
+          <Text style={style.buttonText}>
             Войти
           </Text>
         </TouchableHighlight>
-      </View>
+      </ScrollView>
     )
   }
 }

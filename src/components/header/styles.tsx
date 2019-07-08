@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   login: {
+    maxWidth: 150,
     marginRight: 15,
 
     fontWeight: 'bold',
@@ -14,4 +15,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default styles
+export default style

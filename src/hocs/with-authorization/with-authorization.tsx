@@ -90,7 +90,7 @@ const withAuthorization = (Component) => {
     }
 
     static navigationOptions = {
-      headerTitle: PageHeader.SIGN_IN,
+      headerTitle: PageHeader.AUTHORIZATION,
     }
   }
 
