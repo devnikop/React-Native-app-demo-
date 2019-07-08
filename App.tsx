@@ -13,9 +13,13 @@ import { mock } from './src/mocks/fetch-mock'
 import { ActionCreator } from './src/reducer/data/data'
 import reducer from './src/reducer/index'
 
+import withAuthorization from './src/hocs/with-authorization/with-authorization'
+
 import SignInScreen from './src/components/authorization/authorization'
 import InfoScreen from './src/components/info/info'
 import ArticleListScreen from './src/components/article-list/article-list'
+
+const SignInScreenWrapped = withAuthorization(SignInScreen)
 
 const navigationHeaderOptions = {
   headerStyle: {
@@ -40,7 +44,7 @@ const AppStack = createStackNavigator(
 
 const AuthStack = createStackNavigator(
   {
-    SignIn: SignInScreen
+    SignIn: SignInScreenWrapped
   },
   {
     initialRouteName: Route.SIGN_IN,
