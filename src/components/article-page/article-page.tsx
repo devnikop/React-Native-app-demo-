@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
+  ScrollView,
   Text,
+  TouchableHighlight,
   View,
-  Button,
 } from 'react-native'
 import {
   NavigationScreenProp,
@@ -53,16 +54,29 @@ class ArticlePage extends React.PureComponent<Props> {
 
     return (
       <View style={style.info}>
-        <Text style={style.infoTitle}>{title}</Text>
-        <Text style={style.infoDescription}>{description}</Text>
-        <Button
-          onPress={this._handlerBackButtonPress}
-          title={`Назад`}
-        />
-        <Button
-          onPress={this._handlerSignOffPress}
-          title={`Выйти из аккаунта`}
-        />
+        <ScrollView style={style.articleWrapper}>
+          <Text style={style.infoTitle}>{title}</Text>
+          <Text style={style.infoDescription}>{description}</Text>
+        </ScrollView>
+        <View style={style.buttonsWrapper}>
+          <TouchableHighlight
+            onPress={this._handlerBackButtonPress}
+            style={style.button}
+          >
+            <Text style={style.buttonText}>
+              Назад
+            </Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight
+            onPress={this._handlerSignOffPress}
+            style={[style.button, style.buttonExit]}
+          >
+            <Text style={[style.buttonText, style.buttonExitText]}>
+              Выйти из аккаунта
+            </Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
   }
@@ -82,7 +96,7 @@ class ArticlePage extends React.PureComponent<Props> {
   }
 
   static navigationOptions = {
-    title: PageHeader.INFO,
+    title: PageHeader.DETAILS,
     headerRight: <Header />
   }
 }
