@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {
   Text,
   View,
@@ -14,12 +15,15 @@ import {
   Route,
 } from '../../constants'
 
+import { ActionCreator } from '../../reducer/user/user'
+
 import style from './styles'
 
 import Header from '../header/header'
 
 interface Props {
   navigation: Navigation,
+  userLogout: () => void,
 }
 
 interface NavigationParams {
@@ -68,7 +72,13 @@ class Info extends React.PureComponent<Props> {
   }
 
   _handlerSignOffPress() {
-    this.props.navigation.navigate(Route.SIGN_IN)
+    const {
+      navigation,
+      userLogout,
+    } = this.props
+
+    userLogout()
+    navigation.navigate(Route.SIGN_IN)
   }
 
   static navigationOptions = {
@@ -77,4 +87,10 @@ class Info extends React.PureComponent<Props> {
   }
 }
 
-export default Info
+const mapDispatchToProps = (dispatch) => ({
+  userLogout: () => {
+    dispatch(ActionCreator.userLogout())
+  }
+})
+
+export default connect(null, mapDispatchToProps)(Info)
