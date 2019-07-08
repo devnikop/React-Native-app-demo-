@@ -8,12 +8,14 @@ import {
 } from 'react-navigation'
 
 import { Route } from './src/constants'
+import { mock } from './src/mocks/fetch-mock'
 
-import { reducer } from './src/reducer/user/user'
+import { ActionCreator } from './src/reducer/data/data'
+import reducer from './src/reducer/index'
 
 import SignInScreen from './src/components/authorization/authorization'
 import InfoScreen from './src/components/info/info'
-import NameListScreen from './src/components/name-list/name-list'
+import ArticleListScreen from './src/components/article-list/article-list'
 
 const navigationHeaderOptions = {
   headerStyle: {
@@ -28,7 +30,7 @@ const navigationHeaderOptions = {
 const AppStack = createStackNavigator(
   {
     Details: InfoScreen,
-    Home: NameListScreen,
+    Home: ArticleListScreen,
   },
   {
     initialRouteName: Route.HOME,
@@ -59,6 +61,7 @@ const AppContainer = createAppContainer(createSwitchNavigator(
 class App extends React.Component {
   render() {
     const store = createStore(reducer)
+    store.dispatch(ActionCreator.setArticles(mock.articles))
 
     return <Provider store={store}>
       <AppContainer />

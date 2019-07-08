@@ -1,33 +1,5 @@
-import React from 'react'
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
-import {
-  NavigationParams,
-  NavigationScreenProp,
-  NavigationState,
-} from 'react-navigation'
-
-import {
-  PageHeader,
-  Route,
-} from '../../constants'
-
-import style from './styles'
-
-import Header from '../header/header'
-
-interface Props {
-  navigation: Navigation,
-}
-
-type Navigation = NavigationScreenProp<NavigationState, NavigationParams>
-
 const mock = {
-  names: [
+  articles: [
     {
       description: `Концепция «умного дома» и его использования с отдельного экрана давно казалась мне интересной. Одно время я было начал проект с OpenHAB и Raspberry Pi — весьма продвинутая штука, но необходимость настраивать кучу конфигов быстро надоела. И случайно увидев в продаже Google Nest Hub (ранее называвшийся Google Home Hub), я решил что это как раз то, что нужно — все в одном устройстве от Google, с настройкой через тач-скрин и с возможностью голосового управления. `,
       id: 0,
@@ -52,42 +24,6 @@ const mock = {
   ]
 }
 
-class NameList extends React.PureComponent<Props> {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const {
-      names,
-    } = mock
-
-    return (
-      <View>
-        <FlatList
-          data={names}
-          renderItem={({ item }) =>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate(Route.DETAILS, {
-                title: item.title,
-                description: item.description,
-              })}
-            >
-              <Text style={style.nameItemTitle}>
-                {item.title}
-              </Text>
-            </TouchableOpacity>}
-          style={style.nameList}
-          keyExtractor={(item) => `id-${item.id}`}
-        />
-      </View>
-    )
-  }
-
-  static navigationOptions = {
-    headerTitle: PageHeader.HOME,
-    headerRight: <Header />
-  }
+export {
+  mock
 }
-
-export default NameList
