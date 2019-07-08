@@ -5,10 +5,11 @@ const PageHeader = {
 }
 
 const Route = {
-  AUTH: "Auth",
+  APP_STACK: "AppStack",
+  AUTH_STACK: "AuthStack",
+  AUTHORIZATION: "Authorization",
   DETAILS: "Details",
   HOME: "Home",
-  SIGN_IN: "SignIn",
 }
 
 export {

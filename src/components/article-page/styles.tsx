@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 
-
 const style = StyleSheet.create({
   info: {
     margin: 20,
@@ -16,6 +15,5 @@ const style = StyleSheet.create({
     lineHeight: 20,
   }
 })
-
 
 export default style

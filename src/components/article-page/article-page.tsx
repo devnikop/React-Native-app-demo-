@@ -33,7 +33,7 @@ interface NavigationParams {
 
 type Navigation = NavigationScreenProp<NavigationState, NavigationParams>
 
-class Info extends React.PureComponent<Props> {
+class ArticlePage extends React.PureComponent<Props> {
   constructor(props) {
     super(props)
 
@@ -78,7 +78,7 @@ class Info extends React.PureComponent<Props> {
     } = this.props
 
     userLogout()
-    navigation.navigate(Route.SIGN_IN)
+    navigation.navigate(Route.AUTHORIZATION)
   }
 
   static navigationOptions = {
@@ -93,4 +93,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(Info)
+export default connect(null, mapDispatchToProps)(ArticlePage)
