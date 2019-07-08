@@ -4,6 +4,7 @@ import {
   Text,
   TextInput,
   TouchableHighlight,
+  View,
 } from 'react-native'
 
 import style from './styles'
@@ -27,6 +28,8 @@ class Authorization extends React.PureComponent<Props> {
         <Text style={style.title}>Вход</Text>
         <Text style={style.description}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe tempora illo enim nemo aliquid repellat minus obcaecati praesentium! Tempore, illo officiis! In, eos porro! Reprehenderit nobis natus quam perspiciatis aliquid!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe tempora illo enim nemo aliquid repellat minus obcaecati praesentium! Tempore, illo officiis! In, eos porro! Reprehenderit nobis natus quam perspiciatis aliquid!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe tempora illo enim nemo aliquid repellat minus obcaecati praesentium! Tempore, illo officiis! In, eos porro! Reprehenderit nobis natus quam perspiciatis aliquid!
         </Text>
         <TextInput
           onChangeText={onLoginChange}
@@ -40,14 +43,16 @@ class Authorization extends React.PureComponent<Props> {
           placeholder={`Пароль`}
           textContentType="password"
         />
-        <TouchableHighlight
-          onPress={onButtonPress}
-          style={style.submitButton}
-        >
-          <Text style={style.buttonText}>
-            Войти
+        <View style={style.buttonWrapper}>
+          <TouchableHighlight
+            onPress={onButtonPress}
+            style={style.submitButton}
+          >
+            <Text style={style.buttonText}>
+              Войти
           </Text>
-        </TouchableHighlight>
+          </TouchableHighlight>
+        </View>
       </ScrollView>
     )
   }

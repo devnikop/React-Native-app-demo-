@@ -37,6 +37,10 @@ const style = StyleSheet.create({
     borderBottomColor: '#d9d9d9',
   },
 
+  buttonWrapper: {
+    minHeight: 300,
+  },
+
   submitButton: {
     padding: 20,
     marginLeft: 30,
