@@ -8,9 +8,9 @@ import { Route } from './constants'
 
 import withAuthorization from './hocs/with-authorization/with-authorization'
 
-import Authorization from './components/authorization/authorization'
-import ArticlePage from './components/article-page/article-page'
 import ArticleList from './components/article-list/article-list'
+import ArticlePage from './components/article-page/article-page'
+import Authorization from './components/authorization/authorization'
 
 const AuthorizationWrapped = withAuthorization(Authorization)
 

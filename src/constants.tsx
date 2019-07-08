@@ -1,7 +1,7 @@
 const PageHeader = {
-  HOME: 'Список',
-  DETAILS: 'Элемент',
   AUTHORIZATION: 'Вход в личный кабинет',
+  DETAILS: 'Элемент',
+  HOME: 'Список',
 }
 
 const Route = {

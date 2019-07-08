@@ -11,8 +11,8 @@ import style from './styles'
 
 interface Props {
   login: string,
-  onLoginChange: () => void,
   onButtonPress: () => void,
+  onLoginChange: () => void,
 }
 
 class Authorization extends React.PureComponent<Props> {
