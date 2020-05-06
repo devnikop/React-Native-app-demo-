@@ -17,9 +17,3 @@ Project for learning react native
 ## Deployment
 
 - `npm run build`
-
-## Built With
-
-- [Pug](https://pugjs.org/api/getting-started.html) - Html template engine
-- [Gulp](https://gulpjs.com/) - Toolkit for automating development
-- [Sass](https://sass-lang.com/) - Syntactically Css extension
