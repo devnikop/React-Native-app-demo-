@@ -1,12 +1,25 @@
-# Учебный проект на react native
+# React native app
 
-_Не удаляйте и не изменяйте папки и файлы:_
-_`.editorconfig`, `.gitattributes`, `.gitignore`, `.travis.yml`, `package.json`._
+Project for learning react native
 
----
+## Getting Started
 
-### Памятка
+### Prerequisites
 
-#### 1. Сначала нужно выполнить npm install 
+- Node.js v.12.13.1
+- Npm v.6.12.0
 
-#### 2. Затем npm start
+## Installing
+
+- `npm i`
+- `npm run start`
+
+## Deployment
+
+- `npm run build`
+
+## Built With
+
+- [Pug](https://pugjs.org/api/getting-started.html) - Html template engine
+- [Gulp](https://gulpjs.com/) - Toolkit for automating development
+- [Sass](https://sass-lang.com/) - Syntactically Css extension
